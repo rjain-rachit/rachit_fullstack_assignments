@@ -12,9 +12,10 @@ function Appbar({userEmail, setUserEmail}) {
             padding: 4,
             zIndex: 1
         }}>
-            <div style={{marginLeft: 10, cursor: "pointer"}} onClick={() => {
-                navigate("/")
-            }}>
+            <div style={{marginLeft: 10, cursor: "pointer"}} 
+                onClick={() => {
+                    navigate("/")
+                }}>
                 <Typography variant={"h6"}>Coursera</Typography>
             </div>
     
@@ -41,6 +42,7 @@ function Appbar({userEmail, setUserEmail}) {
                         onClick={() => {
                             localStorage.setItem("token", null);
                             setUserEmail(null);
+                            navigate("/")
                         }}
                     >Logout</Button>
                 </div>

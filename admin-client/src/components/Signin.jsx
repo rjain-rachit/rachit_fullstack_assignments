@@ -4,8 +4,9 @@ import {Card, Typography} from "@mui/material";
 import {useState} from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import { BASE_URL } from '../config';
 
-function Signin() {
+function Signin({setUserEmail}) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const navigate = useNavigate()
@@ -18,7 +19,7 @@ function Signin() {
                 justifyContent: "center"
             }}>
                 <Typography variant={"h6"}>
-                Welcome to Coursera. Sign up below
+                Welcome to Coursera. Sign in below
                 </Typography>
             </div>
         <div style={{display: "flex", justifyContent: "center"}}>
@@ -48,12 +49,10 @@ function Signin() {
                     size={"large"}
                     variant="contained"
                     onClick={async () => {
-                        const res = await axios.post(`${BASE_URL}/admin/login`, {
-                            username: email,
-                            password: password
-                        }, {
+                        const res = await axios.post(`${BASE_URL}/admin/login`, {}, {
                             headers: {
-                                "Content-type": "application/json"
+                                username: email,
+                                password: password
                             }
                         });
                         const data = res.data;
