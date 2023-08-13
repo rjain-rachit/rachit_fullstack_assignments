@@ -4,11 +4,15 @@ import {Card, Typography} from "@mui/material";
 import {useState} from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+<<<<<<< HEAD
 import {useSetRecoilState} from "recoil";
 import {userState} from "../store/atoms/user.js";
 import { BASE_URL } from '../config.js';
+=======
+import { BASE_URL } from '../config';
+>>>>>>> dev3
 
-function Signin() {
+function Signin({setUserEmail}) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const navigate = useNavigate()
@@ -22,7 +26,7 @@ function Signin() {
                 justifyContent: "center"
             }}>
                 <Typography variant={"h6"}>
-                Welcome to Coursera. Sign up below
+                Welcome to Coursera. Sign in below
                 </Typography>
             </div>
         <div style={{display: "flex", justifyContent: "center"}}>
