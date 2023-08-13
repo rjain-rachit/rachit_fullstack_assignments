@@ -52,15 +52,10 @@ function Appbar({}) {
                         variant={"contained"}
                         onClick={() => {
                             localStorage.setItem("token", null);
-<<<<<<< HEAD
                             setUser({
                                 isLoading: false,
                                 userEmail: null
                             })
-=======
-                            setUserEmail(null);
-                            navigate("/")
->>>>>>> dev3
                         }}
                     >Logout</Button>
                 </div>
