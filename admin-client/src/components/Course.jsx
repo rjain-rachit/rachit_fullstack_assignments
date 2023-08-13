@@ -143,9 +143,19 @@ function UpdateCard() {
 </div>
 }
 
-function CourseCard(props) {
+function CourseCard() {
+    const isLoading = useRecoilValue(isCourseLoading);
+  
+    if (isLoading) {
+        return <Loading />
+    }
+    
     const title = useRecoilValue(courseTitle);
+    console.log("title-"+title);
     const imageLink = useRecoilValue(courseImage);
+    console.log("imageLink-"+imageLink);
+    const price = useRecoilValue(coursePrice);
+    console.log("price-"+price);
 
     return <div style={{display: "flex",  marginTop: 50, justifyContent: "center", width: "100%"}}>
      <Card style={{
